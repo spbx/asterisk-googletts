@@ -1,0 +1,69 @@
+<module>
+	<rawname>texttospeech</rawname>
+	<name>Text To Speech</name>
+	<category>Applications</category>
+	<menuitems>
+		<texttospeech>Text To Speech</texttospeech>
+	</menuitems>
+
+	<version>2.0.0.3</version>
+	<publisher></publisher>
+	<location>release/texttospeech-2.0.0.3.tgz</location>
+
+	<depends>
+		<module>core ge 2.9</module>
+	</depends>
+
+	<description>
+		<p>
+			Creates and manages Text to Speech recordings which can be used as an interim destination (i.e. speak text then jump to another destination), can be configured to jump back to an IVR, or can be added as system recordings.
+		</p>
+		<p>
+		Multiple speech synthesis engines are supported, including:
+			<ul>
+				<li>Cepstral SWIFT (Can be configured to use app_swift if your license doesn't support writing to a file))</li>
+				<li>Google Translation</li>
+				<li>Microsoft Translation (Requires subscription from Azure Marketplace)</li>
+				<li>eSpeak</li>
+				<li>Festival Flite</li>
+				<li>Festival Text2Wave</li>
+			</ul>
+		</p>
+		<p>
+		Multiple text sources are supported, including
+			<ul>
+				<li>Static Text</li>
+				<li>A text file</li>
+				<li>Output from a shell command</li>
+				<li>A URL (Can be configured to strip HTML tags)</li>
+			</ul>
+		</p>
+	</description>
+	<info></info>
+	<changelog>
+		*2.0.0.3 - 2012-05-23    
+			- Fixed the "command not found" messages that were being added to
+			  the asterisk log file
+			- Added better support for finding the asterisk binary when looking
+			  for the app_swift application for dynamic swift support
+			- Added more detailed debugging messages to the URL source when
+			  failures occure
+
+		*2.0.0.2 - 2012-04-28    
+			- Added backwards compatibility support for FreePBX 2.9
+			- See ChangeLog for more details
+
+		*2.0.0.1 - 2012-04-25    
+			- Added dependency for freepbx 2.10 or higher
+
+		*2.0.0.0 - 2012-04-24    
+			- Major overhaul of entire module.  Almost all code was rewritten.
+			- Engines are now modular, making it very easy to add new ones.
+			- Implement engines: google, microsoft, swift, espeak, flite, text2wave
+			- Implemented new modular source system, making it very easy to add
+			  new sources.
+			- Implemented sources: text, command, file, URL
+			- Added dynamic options where applicable
+			- Added new 'Allow Playback Control'
+	</changelog>
+</module>
